@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#17212b">
+  <title>قافلة الصحراء — Desert Convoy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="لعبة قيادة ومغامرات في الصحراء"></canvas>
+    <section class="hud" aria-live="polite">
+      <div class="brand"><span class="brand-icon">◆</span><div><b>قافلة الصحراء</b><small>المهمة 01 · طريق الملح</small></div></div>
+      <div class="stats">
+        <div class="stat"><span>المسافة</span><b id="distance">0 م</b></div>
+        <div class="stat"><span>الوقود</span><b id="fuelText">86%</b><div class="meter"><i id="fuelBar"></i></div></div>
+        <div class="stat"><span>حالة المركبة</span><b id="healthText">100%</b><div class="meter health"><i id="healthBar"></i></div></div>
+      </div>
+      <button id="pauseBtn" class="pause" aria-label="إيقاف مؤقت">Ⅱ</button>
+    </section>
+    <div id="mission" class="mission"><span class="mission-dot"></span><span id="missionText">المهمة 1: اجمع 3 إمدادات واعبر الوادي</span></div>
+    <div id="overlay" class="overlay hidden">
+      <div class="dialog">
+        <div class="dialog-mark">◆</div>
+        <h1 id="overlayTitle">قافلة الصحراء</h1>
+        <p id="overlayText">قد مركبتك عبر وادٍ صحراوي مليء بالعقبات. حافظ على الوقود واجمع الإمدادات.</p>
+        <button id="mainBtn">ابدأ الرحلة</button>
+        <small>W / ↑ تسارع · S / ↓ فرامل · A / D توازن</small>
+      </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <nav class="controls" aria-label="عناصر التحكم">
+      <div class="left-controls">
+        <button class="control" data-key="tiltLeft" aria-label="إمالة للخلف">↶</button>
+        <button class="control" data-key="brake" aria-label="فرامل">◀</button>
+      </div>
+      <div class="right-controls">
+        <button class="control fire" data-key="fire" aria-label="إطلاق">✦</button>
+        <button class="control boost" data-key="boost" aria-label="تسارع">▲</button>
+        <button class="control" data-key="tiltRight" aria-label="إمالة للأمام">↷</button>
+      </div>
+    </nav>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
